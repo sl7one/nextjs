@@ -16,7 +16,7 @@ export default async function RootLayout({
 
   return (
     <div className="flex p-4">
-      <ProductsNavigation products={products} />
+      
       {children}
     </div>
   );

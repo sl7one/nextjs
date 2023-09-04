@@ -1,5 +1,4 @@
 import Article from "@/app/components/Article/Article";
-import SwiperComponent from "@/app/components/SwiperComponent/SwiperComponent";
 import { getProduct } from "@/lib/getProduct";
 import { IProduct } from "@/types/IProduct";
 import React from "react";
