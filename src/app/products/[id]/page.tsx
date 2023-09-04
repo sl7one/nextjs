@@ -10,6 +10,6 @@ export default async function Product({
 }) {
   const product: IProduct = await getProduct(id);
   return (
-    <Article product={product}/>
+      <Article product={product} />
   );
 }

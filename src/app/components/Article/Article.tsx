@@ -17,7 +17,7 @@ export default function Article({ product }: { product: IProduct }) {
   } = product;
   return (
     <article className=" mt-4">
-      <div >
+      <div>
         <div>
           <h2>{title}</h2>
           <p>{brand}</p>

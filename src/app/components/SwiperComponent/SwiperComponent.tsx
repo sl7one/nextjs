@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 export default function SwiperComponent({ images }: { images: string[] }) {
+  if (!images) return;
   return (
     <Swiper
       slidesPerView={1}
