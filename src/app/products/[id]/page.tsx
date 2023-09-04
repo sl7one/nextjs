@@ -1,4 +1,4 @@
-import Article from "@/app/components/Article/Article";
+import Article from "@/components/Article/Article";
 import { getProduct } from "@/lib/getProduct";
 import { IProduct } from "@/types/IProduct";
 import React from "react";

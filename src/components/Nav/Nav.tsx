@@ -12,7 +12,7 @@ export default function Nav() {
           <Link href="/about" >About</Link>
         </li>
         <li className="p-4">
-          <Link href="/products/1" >Products</Link>
+          <Link href="/products" >Products</Link>
         </li>
       </ul>
     </nav>
