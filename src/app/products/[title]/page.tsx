@@ -3,25 +3,29 @@ import { IProduct } from "@/types/IProduct";
 import React from "react";
 
 export async function generateStaticParams() {
-  const {products} = await fetch("https://dummyjson.com/products/").then(res =>
-    res.json()
+  const { products } = await fetch("https://dummyjson.com/products/").then(
+    res => res.json()
   );
 
-
   return products.map(({ title }: { title: string }) => ({
-    title: title.replace(/\s+/g, '-'),
+    title: title.replace(/\s+/g, "-"),
   }));
 }
 
-export default async function Product({
-  params: { title },
-}: {
-  params: { title: string };
-}) {
+interface IProps {
+  searchParams: {
+    id: string;
+  };
+}
+
+export default async function Product({ searchParams: { id } }: IProps) {
+  const product: IProduct = await fetch(
+    `https://dummyjson.com/products/${id}`
+  ).then(res => res.json());
+
   return (
     <div>
-      {/* <Article product={product} /> */}
-      {title}
+      <Article product={product} />
     </div>
   );
 }
