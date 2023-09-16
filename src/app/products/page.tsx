@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { IProduct } from "@/types/IProduct";
 import React from "react";
 import ProductsNavigation from "@/components/ProductsNavigation/ProductsNavigation";
 

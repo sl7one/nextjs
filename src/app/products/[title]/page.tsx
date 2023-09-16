@@ -1,16 +1,15 @@
 import Article from "@/components/Article/Article";
-import { IProduct } from "@/types/IProduct";
 import React from "react";
 
-export async function generateStaticParams() {
-  const { products } = await fetch("https://dummyjson.com/products/").then(
-    res => res.json()
-  );
+// export async function generateStaticParams() {
+//   const { products } = await fetch("https://dummyjson.com/products/").then(
+//     res => res.json()
+//   );
 
-  return products.map(({ title }: { title: string }) => ({
-    title: title.replace(/\s+/g, "-"),
-  }));
-}
+//   return products.map(({ title }: { title: string }) => ({
+//     title: title.replace(/\s+/g, "-"),
+//   }));
+// }
 
 interface IProps {
   searchParams: {
