@@ -12,12 +12,12 @@ import React from "react";
 // }
 
 interface IProps {
-  searchParams: {
+  params: {
     id: string;
   };
 }
 
-export default async function Product({ searchParams: { id } }: IProps) {
+export default async function Product({ params: { id } }: IProps) {
   const product: IProduct = await fetch(
     `https://dummyjson.com/products/${id}`
   ).then(res => res.json());

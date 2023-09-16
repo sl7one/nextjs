@@ -9,10 +9,7 @@ export default function ProductsNavigation({
   const items = products.map(({ id, title }: { id: string; title: string }) => (
     <li key={id}>
       <Link
-        href={{
-          pathname: `/products/${title.replace(/\s+/g, "-")}`,
-          query: { id },
-        }}
+        href={`/products/${id}`}
         className="hover:text-emerald-600">
         {title}
       </Link>
