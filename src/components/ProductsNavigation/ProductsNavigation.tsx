@@ -7,7 +7,7 @@ export default function ProductsNavigation({ products }:{products: IProduct[]}) 
   
   const items = products.map(({ id, title }: { id: string; title: string }) => (
     <li key={id}>
-      <Link href={`/products/${id}`} className="hover:text-emerald-600">{title}</Link>
+      <Link href={`/products/${title.replace(/\s+/g, "-")}`} className="hover:text-emerald-600">{title}</Link>
     </li>
   ));
   

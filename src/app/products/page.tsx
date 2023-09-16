@@ -1,12 +1,13 @@
 import { Suspense } from "react";
-
-import { getProducts } from "@/lib/getProducts";
 import { IProduct } from "@/types/IProduct";
 import React from "react";
 import ProductsNavigation from "@/components/ProductsNavigation/ProductsNavigation";
 
 export default async function Products() {
-  const { products }: { products: IProduct[] } = await getProducts();
+  const { products }: { products: IProduct[] } = await fetch(
+    "https://dummyjson.com/products/"
+  ).then(res => res.json());
+
   return (
     <Suspense fallback={<div> Loading ...</div>}>
       <ProductsNavigation products={products} />
