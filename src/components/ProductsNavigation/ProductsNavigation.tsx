@@ -1,4 +1,3 @@
-import { IProduct } from "@/types/IProduct";
 import Link from "next/link";
 import React from "react";
 

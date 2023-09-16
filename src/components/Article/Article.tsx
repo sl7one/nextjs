@@ -1,6 +1,5 @@
 import React from "react";
 import SwiperComponent from "../SwiperComponent/SwiperComponent";
-import { IProduct } from "@/types/IProduct";
 
 export default function Article({ product }: { product: IProduct }) {
   const {
