@@ -14,6 +14,9 @@ export default function Nav() {
         <li className="p-4">
           <Link href="/products" >Products</Link>
         </li>
+        <li className="p-4">
+          <Link href="/products2" >Products2</Link>
+        </li>
       </ul>
     </nav>
   );
