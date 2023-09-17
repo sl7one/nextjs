@@ -1,22 +1,17 @@
 import React from "react";
-import Link from "next/link";
+import { getAllProducts } from "@/API/getAllProducts";
+import ProductsNavigation from "@/components/ProductsNavigation/ProductsNavigation";
+import SearchBar from "@/components/SearchBar/SearchBar";
 
-export default async function Products() {
-  const { products }: { products: IProduct[] } = await fetch(
-    "https://dummyjson.com/products/",  { cache: "no-store" }
-  ).then(res => res.json());
-
-  const items = products.map(({ id, title }: { id: string; title: string }) => (
-    <li key={id}>
-      <Link href={`/products2/${id}`} className="hover:text-emerald-600">
-        {title}
-      </Link>
-    </li>
-  ));
+export default async function Products2() {
+  const { products }: { products: IProduct[] } = await getAllProducts();
 
   return (
-    <nav className="flex-1 mt-4">
-      <ul>{items}</ul>
-    </nav>
+    <>
+      <SearchBar />
+      <nav className="flex-1 mt-4">
+        <ProductsNavigation products={products} route="products2" />
+      </nav>
+    </>
   );
 }

@@ -3,14 +3,14 @@ import React from "react";
 
 export default function ProductsNavigation({
   products,
+  route,
 }: {
   products: IProduct[];
+  route: string;
 }) {
   const items = products.map(({ id, title }: { id: string; title: string }) => (
     <li key={id}>
-      <Link
-        href={`/products/${id}`}
-        className="hover:text-emerald-600">
+      <Link href={`/${route}/${id}`} className="hover:text-emerald-600">
         {title}
       </Link>
     </li>

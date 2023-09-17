@@ -1,3 +1,4 @@
+import { getProduct } from "@/API/getProduct";
 import Article from "@/components/Article/Article";
 import React from "react";
 
@@ -19,9 +20,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Product({ params: { id } }: IProps) {
-  const product: IProduct = await fetch(
-    `https://dummyjson.com/products/${id}`
-  ).then(res => res.json());
+  const product: IProduct = await getProduct(id);
 
   return <div>{<Article product={product} />}</div>;
 }
