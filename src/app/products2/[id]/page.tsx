@@ -9,8 +9,8 @@ interface IProps {
 
 export default async function Product({ params: { id } }: IProps) {
   const product: IProduct = await fetch(
-    `https://dummyjson.com/products/${id}`,
-    { cache: "no-store" }
+    `https://dummyjson.com/products/${id}`
+   
   ).then(res => res.json());
 
   return (

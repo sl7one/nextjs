@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default async function Products() {
   const { products }: { products: IProduct[] } = await fetch(
-    "https://dummyjson.com/products/"
+    "https://dummyjson.com/products/",  { cache: "no-store" }
   ).then(res => res.json());
 
   const items = products.map(({ id, title }: { id: string; title: string }) => (
