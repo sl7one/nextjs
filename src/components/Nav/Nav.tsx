@@ -2,25 +2,23 @@ import Link from "next/link";
 import React from "react";
 
 export default function Nav() {
+  const routes = [
+    { route: "/home", name: "Home" },
+    { route: "/about", name: "About" },
+    { route: "/products", name: "Products" },
+    { route: "/products2", name: "Products2" },
+    { route: "/search", name: "search" },
+  ];
+
+  const items = routes.map(({ route, name }) => (
+    <li key={name} className="p-4 cursor-pointer">
+      <Link href={route}>{name}</Link>
+    </li>
+  ));
+
   return (
     <nav>
-      <ul className="flex justify-center bg-emerald-600 text-base">
-        <li className="p-4 cursor-pointer">
-          <Link href="/home" >Home</Link>
-        </li>
-        <li className="p-4">
-          <Link href="/about" >About</Link>
-        </li>
-        <li className="p-4">
-          <Link href="/products" >Products</Link>
-        </li>
-        <li className="p-4">
-          <Link href="/products2" >Products2</Link>
-        </li>
-        <li className="p-4">
-          <Link href="/search" >Search</Link>
-        </li>
-      </ul>
+      <ul className="flex justify-center bg-emerald-600 text-base">{items}</ul>
     </nav>
   );
 }

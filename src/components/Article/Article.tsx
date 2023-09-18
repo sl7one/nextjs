@@ -15,7 +15,7 @@ export default function Article({ product }: { product: IProduct }) {
     images,
   } = product;
   return (
-    <article className=" mt-4">
+    <article className="mt-4 ">
       <div>
         <div>
           <h2>{title}</h2>
