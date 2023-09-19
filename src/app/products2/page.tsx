@@ -6,7 +6,6 @@ import SearchBar from "@/components/SearchBar/SearchBar";
 export default async function Products2() {
   const { products }: { products: IProduct[] } = await getAllProducts();
 
-
   return (
     <>
       <SearchBar />

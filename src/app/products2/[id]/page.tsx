@@ -8,6 +8,8 @@ interface IProps {
   };
 }
 
+export const dynamicParams = true;
+
 export default async function Product({ params: { id } }: IProps) {
   const product: IProduct = await getProduct(id);
 

@@ -10,7 +10,7 @@ export default function Search() {
   const searchParams = useSearchParams();
   const q = searchParams.get("q");
 
-  const [products, setProducts] = useState<IProduct[] | null >(null);
+  const [products, setProducts] = useState<IProduct[] | null>(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -21,14 +21,16 @@ export default function Search() {
     getData();
   }, [q]);
 
-  if (!products) return;
-
   return (
     <>
       <SearchBar />
-      <Suspense fallback={<div>Loading ...</div>}>
-        <ProductsNavigation products={products} route="products2" />
-      </Suspense>
+      {products ? (
+        <Suspense fallback={<div>Loading ...</div>}>
+          <ProductsNavigation products={products} route="products2" />
+        </Suspense>
+      ) : (
+        <div>No items to render</div>
+      )}
     </>
   );
 }
